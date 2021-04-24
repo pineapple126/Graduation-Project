@@ -6,8 +6,4 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
-.header {
-  float: right;
-}
-</style>
+<style lang="scss" scoped></style>

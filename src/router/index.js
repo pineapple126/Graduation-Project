@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/user",
+    hideInMenu: true,
     component: () =>
       import(/* webpackChunkName: "layout" */ "../layouts/UserLayout.vue"),
     children: [
@@ -31,25 +32,33 @@ const routes = [
     ],
   },
   {
-    path: "/main",
+    path: "/",
     component: () =>
       import(/* webpackChunkName: "layout" */ "../layouts/BasicLayout.vue"),
     children: [
       {
-        path: "/main",
+        path: "/",
         redirect: "/main/drag",
       },
       {
-        path: "/main/drag",
-        name: "drag",
-        component: () =>
-          import(/* webpackChunkName: "main" */ "../views/main/Drag.vue"),
+        path: "/main",
+        name: "main",
+        component: { render: (h) => h("router-view") },
+        children: [
+          {
+            path: "/main/drag",
+            name: "drag",
+            component: () =>
+              import(/* webpackChunkName: "main" */ "../views/main/Drag.vue"),
+          },
+        ],
       },
     ],
   },
   {
     path: "*",
     name: "404",
+    hideInMenu: true,
     component: NotFound,
   },
 ];
