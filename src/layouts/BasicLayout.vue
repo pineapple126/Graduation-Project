@@ -41,6 +41,7 @@ export default {
 }
 
 .el-aside {
+  height: 100vh;
   background-color: #d3dce6;
   color: #333;
   text-align: center;
