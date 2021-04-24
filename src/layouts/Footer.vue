@@ -1,5 +1,5 @@
 <template>
-  <div>Footer</div>
+  <div class="footer">Graduation Project ©2021 Created by pineapple126</div>
 </template>
 
 <script>
