@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="sider-menu">
     <div class="title">
       <i class="el-icon-s-home"></i>
       <span>毕业设计</span>
     </div>
     <el-menu
       default-active="1-1"
-      class="el-menu-vertical-demo"
+      class="el-menu-vertical"
       @open="handleOpen"
       @close="handleClose"
       background-color="#545c64"
@@ -43,6 +43,11 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.sider-menu {
+  height: 100%;
+  background-color: rgb(84, 92, 100);
+}
+
 .title {
   height: 64px;
   line-height: 64px;
@@ -52,5 +57,9 @@ export default {};
     display: inline-block;
     margin-left: 10px;
   }
+}
+
+.el-menu-vertical {
+  border-right-width: 0px;
 }
 </style>
