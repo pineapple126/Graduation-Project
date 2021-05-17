@@ -1,32 +1,48 @@
+<!-- 
+  <template>
+    <el-container>
+      <el-aside width="256px">
+        <SiderMenu />
+      </el-aside>
+      <el-container>
+        <el-header>
+          <Header />
+        </el-header>
+        <el-main>
+          <router-view />
+        </el-main>
+        <el-footer>
+          <Footer />
+        </el-footer>
+      </el-container>
+    </el-container>
+  </template>
+-->
+
 <template>
   <el-container>
-    <el-aside width="256px">
-      <SiderMenu />
-    </el-aside>
-    <el-container>
-      <el-header>
-        <Header />
-      </el-header>
-      <el-main>
-        <router-view />
-      </el-main>
-      <el-footer>
-        <Footer />
-      </el-footer>
-    </el-container>
+    <el-header>
+      <Header />
+    </el-header>
+    <el-main>
+      <router-view />
+    </el-main>
+    <el-footer>
+      <Footer />
+    </el-footer>
   </el-container>
 </template>
 
 <script>
 import Header from "./Header";
 import Footer from "./Footer";
-import SiderMenu from "./SiderMenu";
+// import SiderMenu from "./SiderMenu";
 
 export default {
   components: {
     Header,
     Footer,
-    SiderMenu,
+    // SiderMenu,
   },
 };
 </script>
