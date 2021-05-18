@@ -20,17 +20,19 @@
 -->
 
 <template>
-  <el-container>
-    <el-header>
-      <Header />
-    </el-header>
-    <el-main>
-      <router-view />
-    </el-main>
-    <el-footer>
-      <Footer />
-    </el-footer>
-  </el-container>
+  <div class="basic-layout">
+    <!-- <el-container> -->
+    <!-- <el-header> -->
+    <Header />
+    <!-- </el-header> -->
+    <!-- <el-main> -->
+    <router-view />
+    <!-- </el-main> -->
+    <!-- <el-footer> -->
+    <Footer />
+    <!-- </el-footer> -->
+    <!-- </el-container> -->
+  </div>
 </template>
 
 <script>
@@ -48,35 +50,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-footer {
-  background-color: #b3c0d1;
-  color: #333;
-  text-align: center;
+.basic-layout {
+  background-color: #f0f2f5;
 }
 
-.el-header {
-  padding: 0;
-}
+// .el-footer {
+//   background-color: #b3c0d1;
+//   color: #333;
+//   text-align: center;
+// }
 
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
-}
+// .el-header {
+//   padding: 0;
+// }
 
-.el-main {
-  background-color: #e9eef3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-}
+// .el-main {
+//   background-color: #e9eef3;
+//   color: #333;
+//   text-align: center;
+//   line-height: 160px;
+// }
 
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container .el-aside {
-  line-height: 320px;
-}
+// body > .el-container {
+//   margin-bottom: 40px;
+// }
 </style>
