@@ -1,9 +1,26 @@
 <template>
-  <div class="footer">Graduation Project ©2021 Created by pineapple126</div>
+  <div class="footer">
+    <FooterBar />
+  </div>
 </template>
 
 <script>
-export default {};
+import FooterBar from "@/components/footer/FooterBar";
+
+export default {
+  components: {
+    FooterBar,
+  },
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  height: 44.6px;
+  color: rgba(0, 0, 0, 0.65);
+}
+</style>
