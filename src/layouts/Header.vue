@@ -1,9 +1,17 @@
 <template>
-  <div class="header">header</div>
+  <div class="header">
+    <Navigation />
+  </div>
 </template>
 
 <script>
-export default {};
+import Navigation from "@/components/header/Navigation";
+
+export default {
+  components: {
+    Navigation,
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
