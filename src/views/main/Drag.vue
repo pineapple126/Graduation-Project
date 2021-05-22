@@ -146,17 +146,17 @@ export default {
 
 <style lang="scss" scoped>
 .drag {
-  height: 100vh;
+  height: calc(100vh - 60px - 45px);
   background: #fff;
 
   main {
-    height: calc(100% - 64px);
+    height: calc(100% - 64px - 45px);
     position: relative;
 
     .left {
       position: absolute;
       height: 100%;
-      width: 200px;
+      width: 280px;
       left: 0;
       top: 0;
       padding-top: 10px;
@@ -171,9 +171,9 @@ export default {
     }
 
     .center {
-      margin-left: 200px;
+      margin-left: 280px;
       margin-right: 262px;
-      background: #f5f5f5;
+      background: #f0f2f5;
       height: 100%;
       overflow: auto;
       padding: 20px;
