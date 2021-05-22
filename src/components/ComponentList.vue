@@ -35,16 +35,16 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
 
   .list {
-    width: 45%;
+    width: 40%;
     border: 1px solid #ddd;
     cursor: grab;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: center;
     color: #333;
-    padding: 2px 5px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
