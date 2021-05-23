@@ -15,7 +15,7 @@
           @drop="handleDrop"
           @dragover="handleDragOver"
           @mousedown="handleMouseDown"
-          @mouseup="deselectCurrComponent"
+          @mouseup="deselectCurComponent"
         >
           <Editor />
         </div>
@@ -23,17 +23,17 @@
 
       <!-- 右侧属性列表 -->
       <section class="right">
-        <el-tabs v-model="activeName">
+        <el-tabs class="tabs" type="border-card" v-model="activeName">
           <el-tab-pane label="属性" name="attr">
-            <AttrList v-if="currComponent" />
+            <AttrList v-if="curComponent" />
             <p v-else class="placeholder">请选择组件</p>
           </el-tab-pane>
           <el-tab-pane label="动画" name="animation">
-            <AnimationList v-if="currComponent" />
+            <AnimationList v-if="curComponent" />
             <p v-else class="placeholder">请选择组件</p>
           </el-tab-pane>
           <el-tab-pane label="事件" name="events">
-            <EventList v-if="currComponent" />
+            <EventList v-if="curComponent" />
             <p v-else class="placeholder">请选择组件</p>
           </el-tab-pane>
         </el-tabs>
@@ -168,6 +168,10 @@ export default {
       width: 262px;
       right: 0;
       top: 0;
+
+      .tabs {
+        height: 100%;
+      }
     }
 
     .center {
