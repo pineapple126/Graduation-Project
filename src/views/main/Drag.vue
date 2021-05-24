@@ -171,6 +171,7 @@ export default {
 
       .tabs {
         height: 100%;
+        overflow: auto;
       }
     }
 
