@@ -9,7 +9,7 @@ import "@/styles/animate.css";
 import "element-ui/lib/theme-chalk/index.css";
 import "@/styles/reset.css";
 
-Vue.use(ElementUI);
+Vue.use(ElementUI, { size: "small" });
 Vue.config.productionTip = false;
 
 new Vue({
