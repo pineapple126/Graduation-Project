@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="editMore == 'edit'"
+    v-if="editMode == 'edit'"
     class="v-text"
     @keydown="handleKeydown"
     @keyup="handleKeyup"

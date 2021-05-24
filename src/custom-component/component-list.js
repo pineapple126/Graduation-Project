@@ -19,8 +19,8 @@ const list = [
     propValue: "双击编辑文字",
     icon: "wenben",
     style: {
-      width: 200,
-      height: 22,
+      width: 100,
+      height: 34,
       fontSize: 14,
       fontWeight: 500,
       lineHeight: "",
