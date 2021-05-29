@@ -53,13 +53,14 @@ export default {
   padding: 20px;
 
   .list {
-    width: 45%;
+    width: 100px;
     border: 1px solid #ddd;
     cursor: grab;
     margin-bottom: 20px;
     text-align: center;
     color: #333;
-    padding: 5px;
+    line-height: 24px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
