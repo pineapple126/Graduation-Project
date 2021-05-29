@@ -1,18 +1,18 @@
 <template>
-  <div class="components">
-    <div @dragstart="handleDragStart" class="component-list">
-      <div
-        v-for="(item, index) in componentList"
-        :key="index"
-        class="list"
-        draggable
-        :data-index="index"
-      >
-        <span class="iconfont" :class="'icon-' + item.icon"></span>
-        <span>{{ item.label }}</span>
-      </div>
+  <!-- <div class="components"> -->
+  <div @dragstart="handleDragStart" class="component-list">
+    <div
+      v-for="(item, index) in componentList"
+      :key="index"
+      class="list"
+      draggable
+      :data-index="index"
+    >
+      <span class="iconfont" :class="'icon-' + item.icon"></span>
+      <span>{{ item.label }}</span>
     </div>
-    <div class="disable-component-list">
+  </div>
+  <!-- <div class="disable-component-list">
       <div
         v-for="(item, index) in disableComponentList"
         :key="index"
@@ -22,8 +22,8 @@
         <span class="iconfont" :class="'icon-' + item.icon"></span>
         <span>{{ item.label }}</span>
       </div>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 </template>
 
 <script>
@@ -49,7 +49,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 20px 0 20px;
+  // padding: 20px 20px 0 20px;
+  padding: 20px;
 
   .list {
     width: 45%;
@@ -79,33 +80,33 @@ export default {
   }
 }
 
-.disable-component-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 20px 20px 20px;
+// .disable-component-list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   padding: 0 20px 20px 20px;
 
-  .disable-list {
-    width: 45%;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #c0c4cc;
-    background-color: #ebeef5;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+//   .disable-list {
+//     width: 45%;
+//     border: 1px solid #ddd;
+//     margin-bottom: 20px;
+//     text-align: center;
+//     color: #c0c4cc;
+//     background-color: #ebeef5;
+//     padding: 5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    .iconfont {
-      margin-right: 4px;
-      font-size: 20px;
-    }
+//     .iconfont {
+//       margin-right: 4px;
+//       font-size: 20px;
+//     }
 
-    .icon-wenben,
-    .icon-tupian {
-      font-size: 18px;
-    }
-  }
-}
+//     .icon-wenben,
+//     .icon-tupian {
+//       font-size: 18px;
+//     }
+//   }
+// }
 </style>
