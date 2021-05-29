@@ -11,29 +11,11 @@ export default {
     },
   },
   methods: {
-    // generateForm(json){
-    //   let formData = new FormData();
-    //   for(var key in json) {
-    //     formData.append(key, json[key]);
-    //   }
-    //   return formData
-    // },
     sendEmail() {
-      // const formData=this.generateForm({
-      //   username:"2686000278@qq.com",
-      //   host:"smtp.qq.com",
-      //   contents:"test",
-      //   send:"1289346684@qq.com"
-      // })
-      // console.log("formData",formData)
       this.axios({
         method: "post",
         url: "http://127.0.0.1:5000/email",
-        //  headers: {
-        // "Content-Type": "multipart/form-data"
-        // },
         withCredentials: true,
-        // data:formData,
         data: {
           username: "2686000278@qq.com",
           host: "smtp.qq.com",
