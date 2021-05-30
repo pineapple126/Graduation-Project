@@ -30,7 +30,9 @@
         clearable
       ></el-input>
     </el-form-item>
-    <el-button type="primary" @click="sendEmail">{{ propValue }}</el-button>
+    <el-button type="primary" @click="handleSendEmail">
+      {{ propValue }}
+    </el-button>
     <el-button @click="resetForm('ruleForm')">重置</el-button>
   </el-form>
 </template>
@@ -83,7 +85,7 @@ export default {
     };
   },
   methods: {
-    sendEmail() {
+    handleSendEmail() {
       this.axios({
         method: "post",
         url: "http://127.0.0.1:5000/email",
