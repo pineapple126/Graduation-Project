@@ -12,28 +12,15 @@
       <span>{{ item.label }}</span>
     </div>
   </div>
-  <!-- <div class="disable-component-list">
-      <div
-        v-for="(item, index) in disableComponentList"
-        :key="index"
-        class="disable-list"
-        :data-index="index"
-      >
-        <span class="iconfont" :class="'icon-' + item.icon"></span>
-        <span>{{ item.label }}</span>
-      </div>
-    </div> -->
-  <!-- </div> -->
 </template>
 
 <script>
-import componentList, { disabledList } from "@/custom-component/component-list";
+import componentList from "@/custom-component/component-list";
 
 export default {
   data() {
     return {
       componentList,
-      disableComponentList: disabledList,
     };
   },
   methods: {
@@ -49,7 +36,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  // padding: 20px 20px 0 20px;
   padding: 20px;
 
   .list {
@@ -80,34 +66,4 @@ export default {
     }
   }
 }
-
-// .disable-component-list {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-//   padding: 0 20px 20px 20px;
-
-//   .disable-list {
-//     width: 45%;
-//     border: 1px solid #ddd;
-//     margin-bottom: 20px;
-//     text-align: center;
-//     color: #c0c4cc;
-//     background-color: #ebeef5;
-//     padding: 5px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-
-//     .iconfont {
-//       margin-right: 4px;
-//       font-size: 20px;
-//     }
-
-//     .icon-wenben,
-//     .icon-tupian {
-//       font-size: 18px;
-//     }
-//   }
-// }
 </style>
