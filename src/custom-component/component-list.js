@@ -79,8 +79,8 @@ const list = [
     propValue: "自动填写表单",
     icon: "form",
     style: {
-      width: 150,
-      height: 34,
+      width: 360,
+      height: 120,
       borderWidth: "",
       borderColor: "",
       borderRadius: "",
