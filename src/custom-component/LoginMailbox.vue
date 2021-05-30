@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import validateEmail from "@/utils/validateEmail";
-
 export default {
   props: {
     propValue: {
@@ -41,9 +39,6 @@ export default {
     var validateEmailInForm = (rule, value, callback) => {
       if (!value) {
         return callback(new Error("邮箱账号不能为空"));
-      }
-      if (!validateEmail(value)) {
-        callback(new Error("请输入正确的邮箱账号"));
       } else {
         callback();
       }
@@ -72,7 +67,21 @@ export default {
   },
   methods: {
     handleLoginMailbox() {
-      this.axios({});
+      this.axios({
+        method: "post",
+        url: "http://127.0.0.1:5000/denglu",
+        withCredentials: true,
+        data: {
+          username: this.ruleForm.username,
+          password: this.ruleForm.password,
+        },
+      })
+        .then((res) => {
+          alert(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
