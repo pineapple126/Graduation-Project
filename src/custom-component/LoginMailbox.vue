@@ -1,13 +1,81 @@
 <template>
-  <button class="login-mailbox">{{ propValue }}</button>
+  <el-form
+    class="login-mailbox"
+    :model="ruleForm"
+    :rules="rules"
+    ref="ruleForm"
+    label-width="80px"
+  >
+    <el-form-item label="邮箱账号" prop="username">
+      <el-input
+        v-model="ruleForm.username"
+        placeholder="请输入邮箱账号"
+        clearable
+      ></el-input>
+    </el-form-item>
+    <el-form-item label="邮箱密码" prop="password">
+      <el-input
+        v-model="ruleForm.password"
+        placeholder="请输入邮箱密码"
+        show-password
+      ></el-input>
+    </el-form-item>
+    <el-button type="primary" @click="handleLoginMailbox">
+      {{ propValue }}
+    </el-button>
+    <el-button @click="resetForm('ruleForm')">重置</el-button>
+  </el-form>
 </template>
 
 <script>
+import validateEmail from "@/utils/validateEmail";
+
 export default {
   props: {
     propValue: {
       type: String,
       default: "",
+    },
+  },
+  data() {
+    var validateEmailInForm = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error("邮箱账号不能为空"));
+      }
+      if (!validateEmail(value)) {
+        callback(new Error("请输入正确的邮箱账号"));
+      } else {
+        callback();
+      }
+    };
+    var validatePassword = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error("邮箱密码不能为空"));
+      } else {
+        callback();
+      }
+    };
+    return {
+      ruleForm: {
+        username: "",
+        password: "",
+      },
+      rules: {
+        username: [
+          { validator: validateEmailInForm, required: true, trigger: "blur" },
+        ],
+        password: [
+          { validator: validatePassword, required: true, trigger: "blur" },
+        ],
+      },
+    };
+  },
+  methods: {
+    handleLoginMailbox() {
+      this.axios({});
+    },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
     },
   },
 };
@@ -32,6 +100,7 @@ export default {
   width: 100%;
   height: 100%;
   font-size: 14px;
+  padding: 20px;
 
   &:active {
     color: #3a8ee6;

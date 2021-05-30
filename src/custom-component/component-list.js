@@ -19,8 +19,8 @@ const list = [
     propValue: "登陆邮箱",
     icon: "login",
     style: {
-      width: 100,
-      height: 34,
+      width: 360,
+      height: 170,
       borderWidth: "",
       borderColor: "",
       borderRadius: "",
