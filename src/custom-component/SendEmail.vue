@@ -91,12 +91,18 @@ export default {
         url: "http://127.0.0.1:5000/email",
         withCredentials: true,
         data: {
-          username: this.username,
+          username: this.ruleForm.username,
           host: "smtp.qq.com",
-          contents: this.contents,
-          send: this.send,
+          contents: this.ruleForm.contents,
+          send: this.ruleForm.send,
         },
-      });
+      })
+        .then((res) => {
+          alert(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
