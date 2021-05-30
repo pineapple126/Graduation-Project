@@ -67,14 +67,20 @@ export default {
     handleGenerateExcel() {
       this.axios({
         method: "post",
-        url: "http://127.0.0.1:5000/email",
+        url: "http://127.0.0.1:5000/excel_gene",
         withCredentials: true,
         data: {
-          t1: this.t1,
-          t2: this.t2,
-          t3: this.t3,
+          t1: this.ruleForm.t1,
+          t2: this.ruleForm.t2,
+          t3: this.ruleForm.t3,
         },
-      });
+      })
+        .then((res) => {
+          alert(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
