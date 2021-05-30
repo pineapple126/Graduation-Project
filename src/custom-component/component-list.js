@@ -59,8 +59,8 @@ const list = [
     propValue: "自动生成 Excel",
     icon: "excel",
     style: {
-      width: 150,
-      height: 34,
+      width: 380,
+      height: 225,
       borderWidth: "",
       borderColor: "",
       borderRadius: "",
