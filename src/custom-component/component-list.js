@@ -39,8 +39,8 @@ const list = [
     propValue: "发送邮件",
     icon: "email",
     style: {
-      width: 100,
-      height: 34,
+      width: 400,
+      height: 260,
       borderWidth: "",
       borderColor: "",
       borderRadius: "",

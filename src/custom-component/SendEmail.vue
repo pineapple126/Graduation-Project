@@ -1,14 +1,86 @@
 <template>
-  <button class="send-email" @click="sendEmail">{{ propValue }}123</button>
+  <el-form
+    class="send-email"
+    :model="ruleForm"
+    :rules="rules"
+    ref="ruleForm"
+    label-width="100px"
+  >
+    <el-form-item label="发件人邮箱" prop="username">
+      <el-input
+        v-model="ruleForm.username"
+        placeholder="请输入发件人邮箱"
+        clearable
+      ></el-input>
+    </el-form-item>
+    <el-form-item label="正文" prop="contents">
+      <el-input
+        v-model="ruleForm.contents"
+        type="textarea"
+        :autosize="{ minRows: 3, maxRows: 5 }"
+        placeholder="请输入内容"
+        clearable
+      >
+      </el-input>
+    </el-form-item>
+    <el-form-item label="收件人邮箱" prop="send">
+      <el-input
+        v-model="ruleForm.send"
+        placeholder="请输入收件人邮箱"
+        clearable
+      ></el-input>
+    </el-form-item>
+    <el-button type="primary" @click="sendEmail">{{ propValue }}</el-button>
+    <el-button @click="resetForm('ruleForm')">重置</el-button>
+  </el-form>
 </template>
 
 <script>
+import validateEmail from "@/utils/validateEmail";
+
 export default {
   props: {
     propValue: {
       type: String,
       default: "",
     },
+  },
+  data() {
+    var validateEmailInForm = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error("邮箱不能为空"));
+      }
+      if (!validateEmail(value)) {
+        callback(new Error("请输入正确的邮箱账号"));
+      } else {
+        callback();
+      }
+    };
+    var checkContents = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入邮件内容"));
+      } else {
+        callback();
+      }
+    };
+    return {
+      ruleForm: {
+        username: "",
+        contents: "",
+        send: "",
+      },
+      rules: {
+        username: [
+          { validator: validateEmailInForm, required: true, trigger: "blur" },
+        ],
+        contents: [
+          { validator: checkContents, required: true, trigger: "blur" },
+        ],
+        send: [
+          { validator: validateEmailInForm, required: true, trigger: "blur" },
+        ],
+      },
+    };
   },
   methods: {
     sendEmail() {
@@ -17,16 +89,16 @@ export default {
         url: "http://127.0.0.1:5000/email",
         withCredentials: true,
         data: {
-          username: "2686000278@qq.com",
+          username: this.username,
           host: "smtp.qq.com",
-          contents: "test",
-          send: "1289346684@qq.com",
+          contents: this.contents,
+          send: this.send,
         },
       });
     },
-  },
-  data: () => {
-    return {};
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
   },
 };
 </script>
@@ -50,6 +122,7 @@ export default {
   width: 100%;
   height: 100%;
   font-size: 14px;
+  padding: 20px;
 
   &:active {
     color: #3a8ee6;
@@ -60,6 +133,10 @@ export default {
   &:hover {
     background-color: #ecf5ff;
     color: #3a8ee6;
+  }
+
+  el-input {
+    margin-left: 20px;
   }
 }
 </style>
