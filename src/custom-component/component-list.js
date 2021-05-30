@@ -80,7 +80,7 @@ const list = [
     icon: "form",
     style: {
       width: 360,
-      height: 120,
+      height: 270,
       borderWidth: "",
       borderColor: "",
       borderRadius: "",

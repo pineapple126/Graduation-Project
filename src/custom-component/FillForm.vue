@@ -6,10 +6,29 @@
     ref="ruleForm"
     label-width="80px"
   >
-    <el-form-item label="表单链接" prop="formlink">
+    <el-form-item label="字段1" prop="field1">
       <el-input
-        v-model="ruleForm.formlink"
-        placeholder="请输入表单链接"
+        v-model="ruleForm.field1"
+        placeholder="请输入字段1"
+        clearable
+      ></el-input>
+    </el-form-item>
+    <el-form-item label="字段2" prop="field2">
+      <el-input
+        v-model="ruleForm.field2"
+        placeholder="请输入字段2"
+        clearable
+      ></el-input> </el-form-item
+    ><el-form-item label="字段3" prop="field3">
+      <el-input
+        v-model="ruleForm.field3"
+        placeholder="请输入字段3"
+        clearable
+      ></el-input> </el-form-item
+    ><el-form-item label="字段4" prop="field4">
+      <el-input
+        v-model="ruleForm.field4"
+        placeholder="请输入字段4"
         clearable
       ></el-input>
     </el-form-item>
@@ -29,21 +48,25 @@ export default {
     },
   },
   data() {
-    var validateFormlink = (rule, value, callback) => {
+    var validateField = (rule, value, callback) => {
       if (!value) {
-        callback(new Error("链接不能为空"));
+        callback(new Error("字段不能为空"));
       } else {
         callback();
       }
     };
     return {
       ruleForm: {
-        formlink: "",
+        field1: "",
+        field2: "",
+        field3: "",
+        field4: "",
       },
       rules: {
-        formlink: [
-          { validator: validateFormlink, required: true, trigger: "blur" },
-        ],
+        field1: [{ validator: validateField, required: true, trigger: "blur" }],
+        field2: [{ validator: validateField, required: true, trigger: "blur" }],
+        field3: [{ validator: validateField, required: true, trigger: "blur" }],
+        field4: [{ validator: validateField, required: true, trigger: "blur" }],
       },
     };
   },
@@ -51,13 +74,21 @@ export default {
     handleFillForm() {
       this.axios({
         method: "post",
-        url: "http://127.0.0.1:5000/email",
+        url: "http://127.0.0.1:5000/form_submit",
         withCredentials: true,
         data: {
-          formlink: this.formlink,
-          host: "smtp.qq.com",
+          field1: this.ruleForm.field1,
+          field2: this.ruleForm.field2,
+          field3: this.ruleForm.field3,
+          field4: this.ruleForm.field4,
         },
-      });
+      })
+        .then((res) => {
+          alert(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
