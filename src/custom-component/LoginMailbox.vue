@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   props: {
     propValue: {
@@ -65,11 +67,12 @@ export default {
       },
     };
   },
+  computed: mapState(["requestURL"]),
   methods: {
     handleLoginMailbox() {
       this.axios({
         method: "post",
-        url: "http://127.0.0.1:5000/denglu",
+        url: this.requestURL + "/denglu",
         withCredentials: true,
         data: {
           username: this.ruleForm.username,

@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   props: {
     propValue: {
@@ -63,11 +65,12 @@ export default {
       },
     };
   },
+  computed: mapState(["requestURL"]),
   methods: {
     handleGenerateExcel() {
       this.axios({
         method: "post",
-        url: "http://127.0.0.1:5000/excel_gene",
+        url: this.requestURL + "/excel_gene",
         withCredentials: true,
         data: {
           t1: this.ruleForm.t1,

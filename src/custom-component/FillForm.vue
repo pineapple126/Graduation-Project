@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   props: {
     propValue: {
@@ -70,11 +72,12 @@ export default {
       },
     };
   },
+  computed: mapState(["requestURL"]),
   methods: {
     handleFillForm() {
       this.axios({
         method: "post",
-        url: "http://127.0.0.1:5000/form_submit",
+        url: this.requestURL + "/form_submit",
         withCredentials: true,
         data: {
           field1: this.ruleForm.field1,

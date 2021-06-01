@@ -39,6 +39,7 @@
 
 <script>
 import validateEmail from "@/utils/validateEmail";
+import { mapState } from "vuex";
 
 export default {
   props: {
@@ -84,11 +85,12 @@ export default {
       },
     };
   },
+  computed: mapState(["requestURL"]),
   methods: {
     handleSendEmail() {
       this.axios({
         method: "post",
-        url: "http://127.0.0.1:5000/email",
+        url: this.requestURL + "/email",
         withCredentials: true,
         data: {
           username: this.ruleForm.username,

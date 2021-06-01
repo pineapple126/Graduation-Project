@@ -35,6 +35,8 @@ const data = {
     // 点击画布时是否点中组件，主要用于取消选中组件用。
     // 如果没点中组件，并且在画布空白处弹起鼠标，则取消当前组件的选中状态
     isClickComponent: false,
+    // 请求服务器的根地址，当服务器地址发生变化时需要切换
+    requestURL: "http://127.0.0.1:5000",
   },
   mutations: {
     ...animation.mutations,
