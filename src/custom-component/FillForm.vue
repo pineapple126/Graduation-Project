@@ -6,29 +6,29 @@
     ref="ruleForm"
     label-width="80px"
   >
-    <el-form-item label="字段1" prop="field1">
+    <el-form-item label="天气期待" prop="field1">
       <el-input
         v-model="ruleForm.field1"
-        placeholder="请输入字段1"
+        placeholder="请输入天气期待"
         clearable
       ></el-input>
     </el-form-item>
-    <el-form-item label="字段2" prop="field2">
+    <el-form-item label="姓名" prop="field2">
       <el-input
         v-model="ruleForm.field2"
-        placeholder="请输入字段2"
+        placeholder="请输入姓名"
         clearable
       ></el-input> </el-form-item
-    ><el-form-item label="字段3" prop="field3">
+    ><el-form-item label="年龄" prop="field3">
       <el-input
         v-model="ruleForm.field3"
-        placeholder="请输入字段3"
+        placeholder="请输入年龄"
         clearable
       ></el-input> </el-form-item
-    ><el-form-item label="字段4" prop="field4">
+    ><el-form-item label="联系方式" prop="field4">
       <el-input
         v-model="ruleForm.field4"
-        placeholder="请输入字段4"
+        placeholder="请输入联系方式"
         clearable
       ></el-input>
     </el-form-item>

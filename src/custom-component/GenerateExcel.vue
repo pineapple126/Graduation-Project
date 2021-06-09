@@ -6,24 +6,24 @@
     ref="ruleForm"
     label-width="80px"
   >
-    <el-form-item label="字段1" prop="t1">
+    <el-form-item label="学院姓名" prop="t1">
       <el-input
         v-model="ruleForm.t1"
-        placeholder="请输入字段1"
+        placeholder="请输入学院姓名"
         clearable
       ></el-input>
     </el-form-item>
-    <el-form-item label="字段2" prop="t2">
+    <el-form-item label="参与活动" prop="t2">
       <el-input
         v-model="ruleForm.t2"
-        placeholder="请输入字段2"
+        placeholder="请输入参与活动"
         clearable
       ></el-input>
     </el-form-item>
-    <el-form-item label="字段3" prop="t3">
+    <el-form-item label="渠道来源" prop="t3">
       <el-input
         v-model="ruleForm.t3"
-        placeholder="请输入字段3"
+        placeholder="请输入渠道来源"
         clearable
       ></el-input>
     </el-form-item>
