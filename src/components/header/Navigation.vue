@@ -1,8 +1,11 @@
 <template>
   <div class="nav">
+    <div class="nav-logo">
+      <img :src="logoSrc" />
+    </div>
     <div class="nav-title">
       <el-link href="http://10.2.40.217:8080/" :underline="false">
-        毕业设计
+        机器人流程自动化
       </el-link>
     </div>
     <div class="nav-bar">
@@ -65,16 +68,33 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      logoSrc: require("@/assets/intelligence-logo.jpg"),
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .nav {
   padding-right: 12px;
-  background-color: #303030;
+  background-color: #00796a;
+  text-align: center;
+
+  .nav-logo {
+    float: left;
+    height: 60px;
+
+    img {
+      height: 60px;
+    }
+  }
 
   .nav-title {
     display: inline-block;
+    margin: 0 auto;
     padding: 0 24px;
     text-align: start;
     line-height: 60px;
